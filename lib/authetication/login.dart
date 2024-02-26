@@ -35,7 +35,7 @@ class _loginState extends State<login> {
                     padding: const EdgeInsets.all(10.0),
                     child: TextField(
                       controller: phoneno,
-                      keyboardType: TextInputType.number,
+                      keyboardType: TextInputType.phone,
                       decoration: InputDecoration(
                       hintText: "Enter your Phone Number",
                       suffixIcon: Icon(
@@ -50,33 +50,25 @@ class _loginState extends State<login> {
                     padding: EdgeInsets.all(10.0),
                     child: btn_style(
                       btnName: "Send OTP",
-                       callBack: (){
+                       callBack: ()async {
+                         //  Navigator.pushReplacement(context,
+                         //  MaterialPageRoute(builder: (context)=> otp_authetication("Login")));
+                         // }
 
-                                //  verifyPhoneNumber();
-                          Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context)=> otp_authetication("Login")));
-                         }
-                         // await FirebaseAuth.instance.verifyPhoneNumber(
-                         //     verificationCompleted: (
-                         //         PhoneAuthCredential credential) {},
-                         //     //this will allocate our phone number in the firebase
-                         //     verificationFailed: (FirebaseAuthException ex) {},
-                         //     //any exception that occurs will be sent into this ex object
-                         //     codeSent: (String verificationid,
-                         //         int? recenttoken) {
-                         //       Navigator.pushReplacement(context,
-                         //           MaterialPageRoute(builder: (context) =>
-                         //               otp_authetication(
-                         //                   "Signin", verificationid)));
-                         //     },
-                         //     // verification id: where your page will go
-                         //     // and recent token means when you want the code to be resent
-                         //     codeAutoRetrievalTimeout: (
-                         //         String verificationId) {},
-                         //     //this tells what you have to do when your otp expires
-                         //     phoneNumber: phoneno.text.toString());
-                       //}
-                       )
+                         await FirebaseAuth.instance.verifyPhoneNumber(
+                             verificationCompleted: (PhoneAuthCredential credential){},
+                             verificationFailed: (FirebaseAuthException e){
+                                 //when the verification fails
+                             },
+                             codeSent: (String verificationid, int? resendtoken){
+                               Navigator.pushReplacement(context,
+                                    MaterialPageRoute(builder: (context)=> otp_authetication("Login", verificationid)));
+                             },
+                             codeAutoRetrievalTimeout: (String verificationid){},
+                             phoneNumber: phoneno.text.toString(),
+                         );
+
+                       })
                       ),
                  ]
 

@@ -2,8 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:travel_app/main.dart';
+import 'package:travel_app/home/homepage.dart';
 import 'package:travel_app/authetication/after_splash.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+
 
 
 class splash_screen extends StatefulWidget
@@ -15,15 +18,27 @@ class splash_screen extends StatefulWidget
 
 class _splash_screenState extends State<splash_screen> {
 
-
-  @override
   void initState() {
-    //executed first when the code is initiated.
 
-    Timer(const Duration(seconds: 4), () {
-      Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) =>after_splash())); //push replacement is used to remove the splash from the stack and keep the home page only in the stack const MyHomePage(title: "Travel App"))
-    });
+    super.initState();
+
+      // Navigator.pushReplacement(context,
+      //     MaterialPageRoute(builder: (context) =>after_splash()));
+      // push replacement is used to remove the splash from the stack and keep the home page only in the stack const MyHomePage(title: "Travel App"))
+
+          Timer(const Duration(seconds: 4), () {
+            if(FirebaseAuth.instance.currentUser==null)
+          {
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context)=> after_splash()));
+          }
+          else{
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context)=> homepage()));
+          }
+
+        });
+    //
   }
 
 

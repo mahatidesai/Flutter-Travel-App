@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -50,7 +51,10 @@ class drawable extends StatelessWidget
            backgroundColor: MaterialStateProperty.all(Colors.transparent),
            elevation: MaterialStateProperty.all(0),
          ),),
-       ElevatedButton(onPressed: (){},
+       ElevatedButton(onPressed: (){
+         FirebaseAuth.instance.signOut();
+         //signinout the user from the application.
+       },
          child: Padding(
            padding: const EdgeInsets.only(top: 20),
            child: Row(
