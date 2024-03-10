@@ -21,11 +21,6 @@ class _splash_screenState extends State<splash_screen> {
   void initState() {
 
     super.initState();
-
-      // Navigator.pushReplacement(context,
-      //     MaterialPageRoute(builder: (context) =>after_splash()));
-      // push replacement is used to remove the splash from the stack and keep the home page only in the stack const MyHomePage(title: "Travel App"))
-
           Timer(const Duration(seconds: 4), () {
             if(FirebaseAuth.instance.currentUser==null)
           {

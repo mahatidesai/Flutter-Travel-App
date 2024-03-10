@@ -1,12 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:travel_app/authetication/otp_authetication.dart';
 import 'package:travel_app/custom_widgets/btn_style.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:travel_app/firebase_options.dart';
-
 
 
 class login extends StatefulWidget
@@ -18,7 +14,6 @@ class login extends StatefulWidget
 class _loginState extends State<login> {
 
   var phoneno = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
       return Scaffold(
@@ -51,12 +46,10 @@ class _loginState extends State<login> {
                     child: btn_style(
                       btnName: "Send OTP",
                        callBack: ()async {
-                         //  Navigator.pushReplacement(context,
-                         //  MaterialPageRoute(builder: (context)=> otp_authetication("Login")));
-                         // }
-
                          await FirebaseAuth.instance.verifyPhoneNumber(
-                             verificationCompleted: (PhoneAuthCredential credential){},
+                             verificationCompleted: (PhoneAuthCredential credential){
+                                  //when verification is sucessfull
+                             },
                              verificationFailed: (FirebaseAuthException e){
                                  //when the verification fails
                              },
@@ -67,38 +60,15 @@ class _loginState extends State<login> {
                              codeAutoRetrievalTimeout: (String verificationid){},
                              phoneNumber: phoneno.text.toString(),
                          );
-
                        })
                       ),
                  ]
-
     )
     )
         )
-
-
       );
   }
 
-  // void verifyPhoneNumber() {
-  //     auth.verifyPhoneNumber(
-  //         phoneNumber: phoneno.text,
-  //         verificationCompleted: (PhoneAuthCredential credential) async{
-  //            await auth.signInWithCredential(credential).then((value)=>
-  //             {
-  //               print("You are logged in")
-  //             });
-  //         },
-  //         verificationFailed: (FirebaseAuthException exception){
-  //             print(exception.message);
-  //         },
-  //         codeSent: (String verificationID, int? resendToken){
-  //               verificationIDRecieve = verificationID;
-  //               Navigator.push(context, MaterialPageRoute(builder: (context)=> otp_authetication("Signin")));
-  //         },
-  //         codeAutoRetrievalTimeout: (String verificationID){
-  //
-  //         });
-  //}
+
 }
 

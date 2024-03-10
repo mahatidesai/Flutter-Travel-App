@@ -22,7 +22,7 @@ class btn_style extends StatelessWidget {
            },
 
         style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(Color.fromRGBO(255,219,172, 20)),
+        backgroundColor: MaterialStateProperty.all(Color.fromRGBO(255,219,172, 1)),
         shadowColor: MaterialStateProperty.all(Colors.black),
         elevation: MaterialStateProperty.all(10),
       ),
@@ -39,16 +39,3 @@ class btn_style extends StatelessWidget {
 
   }
 }
-// ElevatedButton(onPressed:(){
-//   Navigator.push(context, MaterialPageRoute(builder: (context) =>signin_login("Login")));
-// } ,
-//   child: Text("Login",
-//     style: TextStyle(
-//       color: Colors.white,
-//       fontSize: 30,
-//     ),),
-//   style: ButtonStyle(
-//     backgroundColor: MaterialStateProperty.all(Colors.orangeAccent),
-//     shadowColor: MaterialStateProperty.all(Colors.black),
-//     elevation: MaterialStateProperty.all(10),
-//   ),),

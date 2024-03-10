@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:travel_app/country/delhi.dart';
+import 'package:travel_app/country/delhi_info/delhi.dart';
 import 'package:travel_app/custom_widgets/cards.dart';
 import '../custom_widgets/drawable.dart';
 import '../country/country_state.dart';
@@ -45,7 +45,9 @@ class india extends StatelessWidget
       style:TextStyle(
         color: Colors.white,
         fontFamily: 'lemon_milk',
-      )),backgroundColor: Color.fromRGBO(0, 31, 33, 20),),
+      )),
+        foregroundColor: Colors.white,
+        backgroundColor: Color.fromRGBO(0, 31, 33, 20),),
       drawer:  drawable(),
       body: Container(
         width: double.infinity,

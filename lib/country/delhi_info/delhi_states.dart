@@ -8,12 +8,12 @@ import 'package:travel_app/custom_widgets/states.dart';
 
 
 class delhi_states extends StatelessWidget {
-  var places = ["humayu tomb", "Red Fort", "Qutub Minar", "Taj Mahal"];
+  var places = ["Taj Mahal","Humayu Tomb", "Red Fort", "Qutub Minar"];
   var url = [
+    "assests/country/india/delhi/taj mahal.jpg",
     "assests/country/india/delhi/humayu.jpg",
     "assests/country/india/delhi/redfort.jpg",
     "assests/country/india/delhi/qutubminar.jpg",
-    "assests/country/india/delhi/taj mahal.jpg"
   ];
 
   @override
@@ -25,6 +25,7 @@ class delhi_states extends StatelessWidget {
               color: Colors.white,
               fontFamily: 'lemon_milk',
             )),
+        foregroundColor: Colors.white,
         backgroundColor: Color.fromRGBO(0, 31, 33, 20),
       ),
       drawer: drawable(),

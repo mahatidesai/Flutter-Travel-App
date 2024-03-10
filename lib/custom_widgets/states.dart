@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:travel_app/country/delhi_info/humayu.dart';
 
 class states extends StatelessWidget
 {
@@ -19,26 +20,31 @@ class states extends StatelessWidget
         borderRadius: BorderRadius.circular(150)
         ),
         child:
-            Container(
-              alignment: Alignment.bottomCenter,
-            height: 490,
-            width: 310,
-            decoration: BoxDecoration(
-            color: Colors.red,
-            borderRadius: BorderRadius.circular(10),
-              image: DecorationImage(
-                image: AssetImage(url,)
-              )
-            ),
-            child:
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(place,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontFamily: 'black_future',
-                  fontSize: 40,
-                ),),
+            InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> humayu(place,url)));
+                },
+              child: Container(
+                alignment: Alignment.bottomCenter,
+              height: 490,
+              width: 310,
+              decoration: BoxDecoration(
+              color: Colors.red,
+              borderRadius: BorderRadius.circular(10),
+                image: DecorationImage(
+                  image: AssetImage(url,)
+                )
+              ),
+                child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(place,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'black_future',
+                      fontSize: 40,
+                    ),),
+
+                ),
               ),
             )
 

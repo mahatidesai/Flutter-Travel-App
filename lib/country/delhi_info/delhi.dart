@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:travel_app/country/delhi_states.dart';
+import 'package:travel_app/country/delhi_info/delhi_states.dart';
 import 'package:travel_app/custom_widgets/cards.dart';
 import 'package:travel_app/custom_widgets/drawable.dart';
 
@@ -15,7 +15,7 @@ class _delhiState extends State<delhi> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Travel App",
+        title: const Text("Travel App",
             style: TextStyle(
               color: Colors.white,
               fontFamily: 'lemon_milk',
@@ -24,8 +24,8 @@ class _delhiState extends State<delhi> {
       ),
       drawer: drawable(),
       body: Container(
-        height: double.infinity,
-        width: double.infinity,
+        height:MediaQuery.of(context).size.height,
+        width:MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
             image: DecorationImage(
           image: AssetImage("assests/country/india/delhi/delhi_splash.jpg"),
@@ -36,45 +36,45 @@ class _delhiState extends State<delhi> {
             height: 300,
             width: 120,
             decoration: BoxDecoration(
-              color: Color.fromRGBO(0, 31, 33, 80),
+              color: const Color.fromRGBO(0, 31, 33, 80),
               borderRadius: BorderRadius.circular(20),
             ),
-            child:
-                Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 8.0),
-                child: const Text("DELHI",
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                   const Padding(
+                    padding: EdgeInsets.only(top: 8.0),
+                    child:  Text("DELHI",
+                        style:  TextStyle(
+                            color: Colors.white,
+                            fontSize: 40,
+                            fontFamily: 'black_future')),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: Text(
+                        "Delhi, city and national capital, and union territory,"
+                            " north-central India. The city of Delhi actually consists of "
+                            "two components: Old Delhi, in the north, the historic city; "
+                            "and New Delhi, in the south, since 1947 the capital of India, "
+                            "built in the first part of the 20th century as the capital of British India.",
                     style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 40,
-                        fontFamily: 'black_future')),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Text(
-                    "Delhi, city and national capital, and union territory,"
-                        " north-central India. The city of Delhi actually consists of "
-                        "two components: Old Delhi, in the north, the historic city; "
-                        "and New Delhi, in the south, since 1947 the capital of India, "
-                        "built in the first part of the 20th century as the capital of British India.",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 14,
-                ),),
-              ),
+                      color: Colors.white,
+                      fontSize: 14,
+                    ),),
+                  ),
                   Padding(
                     padding: const EdgeInsets.only(left:270, top: 20),
-                    child: ElevatedButton(onPressed: (){
+                    child: ElevatedButton(onPressed:(){
                       Navigator.pop(context);
                       Navigator.push(context,
                       MaterialPageRoute(builder: (context)=> delhi_states()));
-
                     },
                       style: ButtonStyle(
                         elevation: MaterialStateProperty.all(20),
-                        fixedSize: MaterialStateProperty.all(Size(92.5,50)),
+                        fixedSize: MaterialStateProperty.all(const Size(92.5,50)),
                       ),
-                      child: Row(
+                      child: const Row(
                       children: [
                         Text("Visit ->",
                         style: TextStyle(

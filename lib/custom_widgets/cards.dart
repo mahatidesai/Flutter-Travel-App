@@ -23,7 +23,7 @@ class cards extends StatelessWidget
        padding: const EdgeInsets.only(left: 2, right:2, bottom: 3, top:3),
        child: Card(
          elevation: 30,
-              color: Color.fromRGBO(255,219,172, 3),
+              color: Color.fromRGBO(255,219,171,10),
               child:
               InkWell(
                 child:

@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:travel_app/home/profile.dart';
+
 
 class drawable extends StatelessWidget
 {
@@ -14,7 +16,9 @@ class drawable extends StatelessWidget
        padding: const EdgeInsets.only(top: 120),
     child:Column(
      children: [
-       ElevatedButton(onPressed: (){},
+       ElevatedButton(onPressed: (){
+         Navigator.push(context, MaterialPageRoute(builder: (context)=> profile()));
+       },
          child: Padding(
            padding: const EdgeInsets.only(bottom: 20),
            child: Row(

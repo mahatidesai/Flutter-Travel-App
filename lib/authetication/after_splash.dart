@@ -21,40 +21,25 @@ class after_splash extends StatelessWidget
 
           //bottons decoration and alignment
              child:
-             Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                // Row(
-                //   mainAxisAlignment: MainAxisAlignment.center,
-                //   children: [
-                //     Padding(
-                //       padding: EdgeInsets.all(11.0),
-                //       child: btn_style(
-                //         btnName: "Signin",
-                //         callBack: (){
-                //           Navigator.push(context,
-                //             MaterialPageRoute(builder: (context)=> signin("Signin")),
-                //           );
-                //         },
-                //       ),
-                //     ),
+                 Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                   children: [
+                     btn_style(
+                     btnName: "Signin",
+                     callBack: (){
+                       Navigator.push(context,
+                         MaterialPageRoute(builder: (context)=> login()),
+                       );
+                     },
+                   ),]
+                 ),
+             )
 
-                    //second elevated button
-                    btn_style(
-                      btnName: "Signin",
-                      callBack: (){
-                        Navigator.push(context,
-                          MaterialPageRoute(builder: (context)=> login()),
-                        );
-                      },
-                    )
 
               //     ],
               //   ),
               //
-              ],
-            ),
-        ),
+
     );
 
   }

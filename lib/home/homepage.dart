@@ -7,6 +7,7 @@ import 'package:travel_app/custom_widgets/drawable.dart';
 import 'package:travel_app/custom_widgets/cards.dart';
 import 'package:travel_app/custom_widgets/drawable.dart';
 import 'package:travel_app/country/india.dart';
+import 'package:travel_app/home/call_country.dart';
 
 class homepage extends StatefulWidget {
   @override
@@ -65,6 +66,7 @@ class _homepageState extends State<homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          foregroundColor: Colors.white,
           title: Text("Travel App",style:TextStyle(
             color: Colors.white,
             fontFamily: 'lemon_milk',)),
@@ -88,8 +90,6 @@ class _homepageState extends State<homepage> {
                           ),
                         ),
                       ),
-
-
 
                 Container(
                   color: Colors.transparent,
